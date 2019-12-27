@@ -1,0 +1,255 @@
+/* FONTS */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+/* MIXINS */
+@mixin orangeBg($opacity){
+  background: rgba(240, 142, 36, $opacity);
+}
+
+/* VARIABLES */
+$orange: #F08E24;
+$blue: #214680;
+
+/* COMMON STYLES */
+
+body{
+  font-family: 'Open Sans', sans-serif;
+}
+
+.App{
+  height: 100vh;
+  padding: 0;
+}
+
+.shadow{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.5);
+  //background: rgba(33, 70, 178, 0.2);
+}
+
+.socials{
+  z-index: 100;
+  position: absolute;
+  bottom: 20px;
+  right: 40px;
+  display: flex;
+  button{
+    margin-right: 10px;
+    width: 35px;
+    height: 35px;
+    border-radius: 100px;
+    background: $orange;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    &:hover{
+      cursor: pointer;
+    }
+    svg{
+      width: 22px;
+    }
+  }
+}
+
+/* SLIDES WRAPPER STYLES */
+
+.slides-wrapper{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+
+/* SLIDE ITEM */
+
+.slide{
+  width: 800px;
+  height: 500px;
+  margin-bottom: 50px;
+  box-shadow: 0px 0px 6px -3px;
+}
+
+.slide-1{
+  background: url("../app/images/office.jpg") 50% 50%;
+  background-size: cover;
+  position: relative;
+  img{
+    z-index: 100;
+    position: relative;
+    width: 150px;
+    margin: 10px 25px;
+  }
+  p{
+    z-index: 100;
+    position: relative;
+    color: #fff;
+    width: 420px;
+    font-size: 30px;
+    text-align: right;
+    float: right;
+    margin: 140px 50px;
+    font-family: 'Open Sans', sans-serif;
+    line-height: 40px;
+  }
+}
+
+
+.slide-2{
+  display: flex;
+  position: relative;
+  .left-side{
+    width: 40%;
+    height: 100%;
+    z-index: 100;
+    position: relative;
+    background: white;
+    img{
+      width: 45px;
+      margin: 15px 20px;
+    }
+    .graph{
+      margin-left: 0px;
+      display: flex;
+      .vert-line{
+        display: flex;
+        width: 1px;
+        height: 300px;
+        border-left: 1px solid $orange;
+        margin: 18px 20px 0 20px;
+      }
+      .hor-line{
+        position: absolute;
+        border-top: 1px solid $orange;
+        height: 1px;
+        width: 20px;
+        top: 93px;
+        left: -20px;
+      }
+      h4{
+        margin-top: 0px;
+        text-align: center;
+        color: $blue;
+        font-size: 20px;
+        font-weight: 500;
+        text-transform: uppercase;
+        position: relative;
+        .hor-line{
+          top: 18px;
+          width: 100px;
+        }
+      }
+    }
+    .box{
+      @include orangeBg(0.4);
+      width: 320px;
+      margin-bottom: 40px;
+      height: 130px;
+      background: rgba(240, 142, 36, 0.6);
+      position: relative;
+      p{
+        color: white;
+        font-size: 15px;
+        line-height: 18px;
+        margin: 0px;
+        padding: 20px;
+      }
+    }
+
+  }
+  .right-side{
+    width: 60%;
+    height: 100%;
+    position: relative;
+    background: url("../app/images/annie-spratt-608001-unsplash-1024x576.jpg") 50% 50%;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    h2{
+      z-index: 100;
+      position: relative;
+      color: white;
+      margin: 60px 40px;
+      width: 300px;
+      text-transform: uppercase;
+      text-align: right;
+      float: right;
+      font-weight: 500;
+    }
+    p{
+      z-index: 100;
+      position: relative;
+      color: white;
+      font-size: 17px;
+      text-align: right;
+      margin: 10px 30px 10px 50px;
+    }
+  }
+}
+
+.slide-4{
+  display: flex;
+  position: relative;
+  background: url("../app/images/footer2.jpg") 50% 50%;
+  background-size: cover;
+  flex-direction: column;
+  img{
+    position: relative;
+    z-index: 100;
+    width: 45px;
+    margin: 15px 20px;
+  }
+  .logo{
+    width: 300px;
+    height: 100px;
+    margin: 0 auto;
+    margin-top: 75px;
+  }
+  p{
+    text-align: center;
+    font-size: 18px;
+    color: white;
+    position: relative;
+    z-index: 100;
+    margin-top: 30px;
+  }
+  footer{
+    position: absolute;
+    z-index: 100;
+    color: white;
+    justify-content: center;
+    display: flex;
+    text-transform: uppercase;
+    bottom: 35px;
+    font-size: 15px;
+    width: 100%;
+    .icon-wrapper{
+      background: $orange;
+      color: white;
+      width: 45px;
+      height: 45px;
+      border-radius: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 15px;
+    }
+    svg{
+      height: 35px;
+    }
+    .footer-block{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 190px;
+      text-align: center;
+    }
+  }
+}
+
+
